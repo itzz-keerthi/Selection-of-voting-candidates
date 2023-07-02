@@ -1,0 +1,44 @@
+﻿@model WelcomeUser.Models.UserResponse;
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+    <head>
+        <title>Welcome form</title>
+        <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+        <h5 class="bg-primary text-white text-center m-2 p-2"> Selection of Voting Candidates!</h5>
+        <form asp-action="Index" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="form-label">Your name:</label>
+                <input asp-for="Name" class="form-control"/>
+            </div>
+        <div class="form-group">
+            <label asp-for="Email" class="form-label">Enter Mail ID:</label>
+            <input asp-for="Email" class="form-control" />
+            </div>
+        <div class="form-group">
+            <label asp-for="CollegeName" class="form-label">Enter College name:</label>
+            <input asp-for="CollegeName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone" class="form-label">Enter Mobile no:</label>
+            <input asp-for="Phone" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="IsAdult" class="form-label">Choose if adult or not:</label>
+            <select asp-for="IsAdult" class="form-control">
+                <option value="">Choose an option</option>
+                <option value="true">I am above 18!</option>
+                <option value="false">I am below 18!</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit Now</button>
+        </form>
+    </body>
+</html>

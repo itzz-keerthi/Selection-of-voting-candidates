@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <title>Thanking Note!</title>
+    </head>
+    <body class="text-center">
+    <div>
+        <h1>Thank you, @Model?.Name!</h1>
+        @if (Model?.IsAdult == true)
+        {
+            @:It's great that you're eligible to vote.
+        }
+        else
+        {
+            @:Sorry, You're not eligible to vote.
+        }
+    </div>
+    Click
+    <a asp-action="VotingList">here</a> to see the vote list.
+    </body>
+</html>
